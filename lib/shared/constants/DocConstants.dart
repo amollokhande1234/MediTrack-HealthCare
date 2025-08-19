@@ -1,0 +1,2 @@
+String docName = '';
+String docProfileUrl = '';
