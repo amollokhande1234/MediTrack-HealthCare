@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:meditrack/shared/constants/Colors.dart';
 import 'package:meditrack/shared/widgets/customAppBar.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -21,8 +22,8 @@ class _ChatScreenState extends State<ChatScreen> {
   static const bool useOpenRouter = true;
 
   // Put your key here (NO extra spaces/newlines).
-  static const String apiKey =
-      "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";
+  // static const String apiKey =
+  //     "";
   // ==========================================
 
   String get _baseUrl =>
@@ -38,6 +39,9 @@ class _ChatScreenState extends State<ChatScreen> {
   Future<String> _chat(String prompt) async {
     try {
       final uri = Uri.parse(_baseUrl);
+
+      await dotenv.load(fileName: ".env");
+      String apiKey = dotenv.env['DEEP_SEEK_API'] ?? '';
 
       // Common headers
       final headers = <String, String>{

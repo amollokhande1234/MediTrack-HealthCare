@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:meditrack/FirebaseServices/FirebaseConstants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,11 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 String profileUrl = '';
 String userName = '';
 String userEmail = '';
-
-class UserConstants {
-  static const String chatGPTAPIKEY =
-      "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"; // your token
-}
 
 Future<void> saveUserData(String username, String profileUrl) async {
   final prefs = await SharedPreferences.getInstance();
@@ -55,11 +51,12 @@ Future<void> saveUserData(String username, String profileUrl) async {
 // }
 
 class DeepSeekService {
-  final String apiKey =
-      "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"; // replace with your real key
+  // replace with your real key
   final String apiUrl = "https://api.deepseek.com/v1/chat/completions";
 
   Future<String> getDeepSeekResponse(String prompt) async {
+    await dotenv.load(fileName: ".env");
+    String apiKey = dotenv.env['DEEP_SEEK_API'] ?? '';
     final response = await http.post(
       Uri.parse(apiUrl),
       headers: {
