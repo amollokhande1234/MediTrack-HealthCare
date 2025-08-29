@@ -14,42 +14,6 @@ Future<void> saveUserData(String username, String profileUrl) async {
   await prefs.setString("profileUrl", profileUrl);
 }
 
-// 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
-// class DeepSeekService {
-//   // final String apiKey =
-//   //     "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";
-//   String apiKey =
-//       "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";
-//   final String baseUrl = "https://api.deepseek.com/v1/chat/completions";
-
-//   Future<void> getDeepSeekResponse(String prompt) async {
-//     const String apiKey =
-//         "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"; // replace with your key
-//     const String apiUrl = "https://api.deepseek.com/chat/completions";
-
-//     final response = await http.post(
-//       Uri.parse(apiUrl),
-//       headers: {
-//         "Content-Type": "application/json",
-//         "Authorization": "Bearer $apiKey",
-//       },
-//       body: jsonEncode({
-//         "model": "deepseek-chat", // or the correct model you enabled
-//         "messages": [
-//           {"role": "user", "content": prompt},
-//         ],
-//       }),
-//     );
-
-//     if (response.statusCode == 200) {
-//       final data = jsonDecode(response.body);
-//       print("Response: ${data['choices'][0]['message']['content']}");
-//     } else {
-//       print("Error ${response.statusCode}: ${response.body}");
-//     }
-//   }
-// }
-
 class DeepSeekService {
   // replace with your real key
   final String apiUrl = "https://api.deepseek.com/v1/chat/completions";

@@ -280,17 +280,19 @@ class PatitenHomeScreen extends StatelessWidget {
                         return Center(child: Text("No Cabinet Added"));
                       } else {
                         final data = snapshot.data!.docs;
-                        return ListView.builder(
-                          itemCount: data.length,
-                          itemBuilder: (context, index) {
-                            final cabinet = data[index];
-                            return cabinateContainer(
-                              cabinet['pillName'],
-                              10,
-                              50,
-                              cabinet['desc'],
-                            );
-                          },
+                        return Expanded(
+                          child: ListView.builder(
+                            itemCount: data.length,
+                            itemBuilder: (context, index) {
+                              final cabinet = data[index];
+                              return cabinateContainer(
+                                cabinet['pillName'],
+                                10,
+                                50,
+                                cabinet['desc'],
+                              );
+                            },
+                          ),
                         );
                       }
                     },

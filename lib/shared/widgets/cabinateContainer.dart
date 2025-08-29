@@ -9,10 +9,11 @@ Widget cabinateContainer(
   String subtitle,
 ) {
   return Container(
-    height: 100,
-    width: 150,
+    // height: 100,
+    width: 200,
     decoration: BoxDecoration(
       color: CustomColors.cardLightPink,
+      // color: Colors.amber,x
       borderRadius: BorderRadius.circular(20),
     ),
     child: Padding(
@@ -41,7 +42,7 @@ Widget cabinateContainer(
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: CustomColors.textDark,
-                  fontSize: 19,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
