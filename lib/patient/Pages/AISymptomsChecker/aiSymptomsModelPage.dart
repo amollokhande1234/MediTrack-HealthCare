@@ -33,15 +33,18 @@ class _ChatScreenState extends State<ChatScreen> {
 
   String get _modelId =>
       useOpenRouter
-          ? "deepseek/deepseek-chat" // OpenRouter model id
+          // ? "deepseek/deepseek-chat" // OpenRouter model id
+          ? "deepseek/deepseek-r1:free"
           : "deepseek-chat"; // DeepSeek direct model id
 
   Future<String> _chat(String prompt) async {
     try {
       final uri = Uri.parse(_baseUrl);
 
-      await dotenv.load(fileName: ".env");
-      String apiKey = dotenv.env['DEEP_SEEK_API'] ?? '';
+      // await dotenv.load(fileName: ".env");
+      // String apiKey = dotenv.env['DEEP_SEEK_API'] ?? '';
+      String apiKey =
+          "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";
 
       // Common headers
       final headers = <String, String>{

@@ -38,8 +38,8 @@ class _MediTrackDoctorState extends State<MediTrackDoctor> {
       title: 'MediTrack - Doctor',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: AuthWrapper(), // ✅ Navigation controller
-      // home: DocotrLoginPage(),
+      // home: AuthWrapper(), // ✅ Navigation controller
+      home: DocotrLoginPage(),
     );
   }
 }
