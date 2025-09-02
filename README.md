@@ -44,8 +44,9 @@ All screenshots are stored in `assets/outputs/`.
 
 ## 📸 Screenshots Patients
 | Doctor Home | Docotor Chat | Doctor Profile | 
-|-------------|---------|--------------|-------------|
+|-------------|--------------|----------------|
 | ![Home](assets/outputs/doctorHome.jpg) | ![Chat](assets/outputs/doctorChat.jpg) | ![Profile](assets/outputs/doctorProfile.jpg) |
+
 ---
 
 ## 📂 Project Setup
